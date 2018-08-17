@@ -55,7 +55,11 @@ RUN conda install --yes --file ${AIRFLOW_HOME}/requirements-conda.txt \
 #
 # 2. Uncomment to pip install from a github repo/branch/commit.  YMMV.
 #
-RUN pip install -e git://github.com/apache/incubator-airflow.git@fdb7e949140b735b8554ae5b22ad752e86f6ebaf#egg=airflow[celery,crypto,hive,jdbc,ldap,password,postgres,s3,vertica]
+
+#RUN pip install -e git://github.com/apache/incubator-airflow.git@fdb7e949140b735b8554ae5b22ad752e86f6ebaf#egg=airflow[celery,crypto,hive,jdbc,ldap,password,postgres,s3,vertica]
+
+RUN pip install apache-airflow[celery,crypto,hive,jdbc,ldap,password,postgres,s3,vertica]
+
 #
 # 3. Uncomment to git clone the repo, git checkout a branch, git reset to a commit, then build from source.
 #
